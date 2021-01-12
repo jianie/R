@@ -1,5 +1,5 @@
 getwd()
-setwd("C:/Users/¼ÕÇöÁø/Desktop/R")
+setwd("C:/Users/ì†ì§€ì•ˆ/Desktop/R")
 View()
 listfiles()
 
@@ -8,29 +8,29 @@ ex<-read.csv("acc.csv",head=TRUE)
 ex[1:3 , 1:10]
 
 #Test of normal distribution
-qqnorm(ex$»ç»óÀÚ¼ö)
-qqline(ex$»ç»óÀÚ¼ö)
+qqnorm(ex$ì‚¬ìƒììˆ˜)
+qqline(ex$ì‚¬ìƒììˆ˜)
 
 dim(ex)
 aa<-ex[1:5000,]
-shapiro.test(aa$»ç»óÀÚ¼ö)  
+shapiro.test(aa$ì‚¬ìƒììˆ˜)  
 
 #Test for equality of two variances
-ex$ÄÚµå<- ifelse(ex$»ç°íÀ¯ÇüÄÚµå==5,1,0)
-var.test(»ç»óÀÚ¼ö ~ ÄÚµå , data=ex , conf.level = 0.95)
+ex$ì½”ë“œ<- ifelse(ex$ì‚¬ê³ ìœ í˜•ì½”ë“œ==5,1,0)
+var.test(ì‚¬ìƒììˆ˜ ~ ì½”ë“œ , data=ex , conf.level = 0.95)
 
 #T-Test
-t.test(»ç»óÀÚ¼ö ~ ÄÚµå, data=ex,var.equal=FALSE, conf.level = 0.95 )
+t.test(ì‚¬ìƒììˆ˜ ~ ì½”ë“œ, data=ex,var.equal=FALSE, conf.level = 0.95 )
 
 #anova
-out=aov ( »ç»óÀÚ¼ö ~  factor (»ç°íÀ¯Çü±¸ºĞ) , data=ex )
+out=aov ( ì‚¬ìƒììˆ˜ ~  factor (ì‚¬ê³ ìœ í˜•êµ¬ë¶„) , data=ex )
 summary(out) 
 
 #pearson correlation
 head(ex)
-plot (À§µµ ~ »ç»óÀÚ¼ö , data=ex )
+plot (ìœ„ë„ ~ ì‚¬ìƒììˆ˜ , data=ex )
 
-#»çÈÄ°ËÁ¤
+#ì‚¬í›„ê²€ì •
 install.packages('agricolae')
 library(agricolae)
 TukeyHSD(out)
