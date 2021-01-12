@@ -1,5 +1,5 @@
 getwd()
-setwd("C:/Users/¼ÕÇöÁø/Desktop/R")
+setwd("C:/Users/ì†ì§€ì•ˆ/Desktop/R")
 View()
 listfiles()
 
@@ -9,36 +9,36 @@ head(a)
 
 ex<-read.csv("acc.csv",head=TRUE)
 
-res = lm(»ç»óÀÚ¼ö ~ »ç°íÀ¯ÇüÄÚµå, data=ex)
+res = lm(ì‚¬ìƒììˆ˜ ~ ì‚¬ê³ ìœ í˜•ì½”ë“œ, data=ex)
 res
-summary(res)  #r-squared °ª:  17 ÆÛ¼¾Æ® ¼³¸íÇÑ´Ù  
+summary(res)  #r-squared ê°’:  17 í¼ì„¼íŠ¸ ì„¤ëª…í•œë‹¤  
 
-res = lm(»ç»óÀÚ¼ö ~ »ç°í¿¬µµ, data=ex)
+res = lm(ì‚¬ìƒììˆ˜ ~ ì‚¬ê³ ì—°ë„, data=ex)
 res
-summary(res)  #0.8ÆÛ¼¾Æ®
+summary(res)  #0.8í¼ì„¼íŠ¸
 
 
-res = lm(»ç»óÀÚ¼ö ~ À§µµ, data=ex)
+res = lm(ì‚¬ìƒììˆ˜ ~ ìœ„ë„, data=ex)
 res
-summary(res)   #0.7ÆÛ¼¾Æ® ¼³¸íÇÑ´Ù 
+summary(res)   #0.7í¼ì„¼íŠ¸ ì„¤ëª…í•œë‹¤ 
 
 
-res = lm(»ç»óÀÚ¼ö ~ °æµµ, data=ex)
+res = lm(ì‚¬ìƒììˆ˜ ~ ê²½ë„, data=ex)
 res
 summary(res)  
 
- #0.03ÆÛ¼¾Æ® ¼³¸íÇÑ´Ù 
+ #0.03í¼ì„¼íŠ¸ ì„¤ëª…í•œë‹¤ 
 
 step(res)
 
 
 
 #multivariate analysis
-res = lm ( »ç»óÀÚ¼ö ~ »ç°íÀ¯ÇüÄÚµå + »ç°í¿¬µµ + À§µµ + °æµµ+À§Ä¡ÄÚµå + °æ»óÀÚ¼ö , data=ex)
+res = lm ( ì‚¬ìƒììˆ˜ ~ ì‚¬ê³ ìœ í˜•ì½”ë“œ + ì‚¬ê³ ì—°ë„ + ìœ„ë„ + ê²½ë„+ìœ„ì¹˜ì½”ë“œ + ê²½ìƒììˆ˜ , data=ex)
 res
 summary(res)   
 
-  #17ÆÛ¼¾Æ®¸¦ ¼³¸íÇÑ´Ù 
+  #17í¼ì„¼íŠ¸ë¥¼ ì„¤ëª…í•œë‹¤ 
 
 step(res)
 
@@ -46,9 +46,9 @@ step(res)
 
 #chi-test
 
-#¾î¸°ÀÌ»ç°íÀÎÁö ¾Æ´ÑÁö
-ex$acci<- ifelse(ex$»ç°íÀ¯ÇüÄÚµå>2,1,0)
-ex$num<- ifelse(ex$»ç»óÀÚ¼ö>5,2,3)
+#ì–´ë¦°ì´ì‚¬ê³ ì¸ì§€ ì•„ë‹Œì§€
+ex$acci<- ifelse(ex$ì‚¬ê³ ìœ í˜•ì½”ë“œ>2,1,0)
+ex$num<- ifelse(ex$ì‚¬ìƒììˆ˜>5,2,3)
 chisq.test ( ex$acci, ex$num ) 
 
 a3<- table ( ex$acci , ex$num )
@@ -59,9 +59,9 @@ library(Rcmdr)
 rowPercents(a3)   
 colPercents(a3)
 
-#¹«´ÜÈ¾´Ü»ç°íÀÎÁö ¾Æ´ÑÁö
-ex$acci<- ifelse(ex$»ç°íÀ¯ÇüÄÚµå==5,1,0)
-ex$num<- ifelse(ex$»ç»óÀÚ¼ö>5,2,3)
+#ë¬´ë‹¨íš¡ë‹¨ì‚¬ê³ ì¸ì§€ ì•„ë‹Œì§€
+ex$acci<- ifelse(ex$ì‚¬ê³ ìœ í˜•ì½”ë“œ==5,1,0)
+ex$num<- ifelse(ex$ì‚¬ìƒììˆ˜>5,2,3)
 chisq.test ( ex$acci, ex$num ) 
 
 a4<- table ( ex$acci , ex$num )
