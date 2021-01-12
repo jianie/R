@@ -1,5 +1,5 @@
 getwd()
-setwd("C:/Users/손/Desktop/R")
+setwd("C:/Users/손지안/Desktop/R")
 View()
 listfiles()
 
